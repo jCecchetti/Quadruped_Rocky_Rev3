@@ -43,10 +43,10 @@ int main(int argc, char *argv[])
 	setAngle(8,90);
 	std::cout << 90/180.0*4096.0;
 	setAngle(9,90);
-	setAngle(10,90);
-	setAngle(12,90);
-	setAngle(13,90);
-	setAngle(14,90);
+	setAngle(10,45);
+	setAngle(12,20);
+	setAngle(13,135);
+	setAngle(14,10);
 
 	Leg frontLeftLeg;
 	Leg frontRightLeg;
