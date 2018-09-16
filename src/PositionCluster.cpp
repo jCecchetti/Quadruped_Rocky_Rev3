@@ -12,7 +12,7 @@ PositionCluster::PositionCluster() {
 
 }
 
-PositionCluster::PositionCluster(Position frontRight, Position frontLeft, Position rearRight, Position rearLeft) {
+PositionCluster::PositionCluster(Position frontLeft, Position frontRight, Position rearLeft, Position rearRight) {
 	position[0] = frontLeft;
 	position[1] = frontRight;
 	position[2] = rearLeft;
