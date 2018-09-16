@@ -6,6 +6,7 @@
  */
 
 #include "Step.h"
+#include <math.h>
 
 Step::Step() {
 
@@ -114,7 +115,7 @@ bool Step::balanceCoM(int steppingLeg){
 			g_localRobotPos.x -= speed*(g_globalFeetPos.position[3].x - CoMPos.x)/dist;
 		}
 		if(CoMStable(g_globalFeetPos.position[1], g_globalFeetPos.position[2], g_globalFeetPos.position[3], frontBalanceLimit) &&
-				!CoMStable(g_globalFeetPos.position[1], g_globalFeetPos.position[2], g_globalFeetPos.position[3], rearBalanceLimit));
+				!CoMStable(g_globalFeetPos.position[1], g_globalFeetPos.position[2], g_globalFeetPos.position[3], rearBalanceLimit)){}
 		else return true;
 		break;
 	case legID::rearLeft:
@@ -130,7 +131,7 @@ bool Step::balanceCoM(int steppingLeg){
 			g_localRobotPos.x -= speed*(g_globalFeetPos.position[2].x - CoMPos.x)/dist;
 		}
 		if(CoMStable(g_globalFeetPos.position[0], g_globalFeetPos.position[2], g_globalFeetPos.position[3], frontBalanceLimit) &&
-				!CoMStable(g_globalFeetPos.position[0], g_globalFeetPos.position[2], g_globalFeetPos.position[3], rearBalanceLimit));
+				!CoMStable(g_globalFeetPos.position[0], g_globalFeetPos.position[2], g_globalFeetPos.position[3], rearBalanceLimit)){}
 		else return true;
 		break;
 
