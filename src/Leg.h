@@ -12,8 +12,7 @@ class Position;
 
 class Leg {
 public:
-	Leg();
-	Leg(int, bool);
+	Leg(int, int, int, bool);
 	bool setFootPos(Position);
 	virtual ~Leg();
 
@@ -38,6 +37,10 @@ private:
 	double TIBIA = 2.3585;
 	double TARSUS = 3.4;
 	double SERVOWIDTH = 1.927;
+
+	int hipChannel;
+	int kneeChannel;
+	int ankleChannel;
 
 	bool left = false;
 };

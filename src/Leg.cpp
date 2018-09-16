@@ -10,22 +10,22 @@
 #include "Position.h"
 #include <iostream>
 #include "Constants.h"
+#include "PWM.h"
 
 
-Leg::Leg() {
-}
-
-Leg::Leg(int legnum, bool left){
+Leg::Leg(int hipChannel, int kneeChannel, int ankleChannel, bool left){
 	this->left = left;
-
+	initPWM(0x40);
+	this->hipChannel = hipChannel;
+	this->kneeChannel = kneeChannel;
+	this->ankleChannel = ankleChannel;
 }
 
 bool Leg::setFootPos(Position pos){
 		calculateAngles(pos.x, pos.y, pos.z);
-		//System.out.println(pos.x + " " + pos.y + " " + pos.z);
-		//servo1.setPosition((float) hipAngle);
-		//servo2.setPosition((float) kneeAngle);
-		//servo3.setPosition((float) ankleAngle);
+		setAngle(hipChannel, hipAngle-95);
+		setAngle(kneeChannel, kneeAngle-95);
+		setAngle(ankleChannel, ankleAngle-95);
 
 		return true;
 }
