@@ -57,9 +57,9 @@ bool Leg::calculateAngles(double x, double y, double z){
 	kneeAngle *= 57.2958;
 	ankleAngle *= 57.2958;
 
-	//std::cout << hipAngle << std::endl;
-	//std::cout << kneeAngle << std::endl;
-	//std::cout << ankleAngle << std::endl;
+	std::cout << hipAngle << std::endl;
+	std::cout << kneeAngle << std::endl;
+	std::cout << ankleAngle<< "\n" << std::endl;
 
 	return true;
 }

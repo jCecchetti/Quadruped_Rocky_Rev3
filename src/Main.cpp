@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	//std::cout << "YAY" << std::endl;
 
 	Timer loopTimer;
-	double fps = 60.0;// updates per second
+	double fps = 40.0;// updates per second
 	double timePerTick = 1000/fps;
 	double delta = 0;
 	double now = loopTimer.getMillis();
