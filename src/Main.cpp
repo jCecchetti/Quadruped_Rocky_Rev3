@@ -34,18 +34,12 @@ double g_stepLengthY = 0;
 int main(int argc, char *argv[])
 {
 	initPWM(0x40);
-	setPWM(0,2450, 1646);
-	/*setPWM(1,2048, 2048);
-	setPWM(2,2048, 2048);
-	setPWM(4,1024, 3072);
-	setPWM(5,1024, 3072);
-	setPWM(6,1024, 3072);
 	setAngle(8,90);
 	setAngle(9,90);
 	setAngle(10,45);
 	setAngle(12,20);
 	setAngle(13,135);
-	setAngle(14,10);*/
+	setAngle(14,10);
 
 	Leg frontLeftLeg;
 	Leg frontRightLeg;
