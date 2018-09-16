@@ -17,7 +17,7 @@ void initPWM(int address)
     mode1 = mode1 & ~__SLEEP;
     wiringPiI2CWriteReg8(pwmHatFD, __MODE1, mode1);
 
-    setPWMFreq(417);
+    setPWMFreq(60);
 }
 
 void setPWMFreq(int freq)
@@ -54,7 +54,6 @@ void resetAllPWM(int on, int off)
 }
 
 void setAngle(int channel, double angle){
-	int highTime = floor((angle/180.0)*4096.0);
-
-	setPWM(channel, highTime, 4096-highTime);
+	int pulseWidth = floor(angle*10.0+1500);
+	setPWM(channel, pulseWidth, 4096-pulseWidth);
 }
