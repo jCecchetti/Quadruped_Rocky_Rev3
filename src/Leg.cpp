@@ -10,14 +10,14 @@
 #include "Position.h"
 #include <iostream>
 #include "Constants.h"
-#include "PWM.h"
+
 
 Leg::Leg() {
 }
 
 Leg::Leg(int legnum, bool left){
 	this->left = left;
-	initPWM(0x40);
+
 }
 
 bool Leg::setFootPos(Position pos){
