@@ -34,9 +34,9 @@ double g_stepLengthY = 0;
 int main(int argc, char *argv[])
 {
 	initPWM(0x40);
-	setPWM(0,1024, 3072);
-	setPWM(1,1024, 3072);
-	setPWM(2,1024, 3072);
+	setPWM(0,2048, 3072);
+	setPWM(1,2048, 3072);
+	setPWM(2,2048, 3072);
 	setPWM(4,1024, 3072);
 	setPWM(5,1024, 3072);
 	setPWM(6,1024, 3072);
