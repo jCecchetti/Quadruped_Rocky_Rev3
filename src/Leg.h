@@ -13,7 +13,7 @@ class Position;
 class Leg {
 public:
 	Leg();
-	Leg(bool);
+	Leg(int, bool);
 	bool setFootPos(Position);
 	virtual ~Leg();
 
