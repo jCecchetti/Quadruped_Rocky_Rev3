@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
 	setPWM(5,1024, 3072);
 	setPWM(6,1024, 3072);
 	setAngle(8,90);
+	std::cout << 90/180.0*4096.0;
 	setAngle(9,90);
 	setAngle(10,90);
 	setAngle(12,90);

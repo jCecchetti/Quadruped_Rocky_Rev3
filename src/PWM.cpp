@@ -55,5 +55,6 @@ void resetAllPWM(int on, int off)
 
 void setAngle(int channel, double angle){
 	int highTime = floor((angle/180.0)*4096.0);
+
 	setPWM(channel, highTime, 4096-highTime);
 }
