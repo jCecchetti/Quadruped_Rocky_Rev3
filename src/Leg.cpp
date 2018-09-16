@@ -12,7 +12,9 @@
 #include "Constants.h"
 #include "PWM.h"
 
+Leg::Leg(){
 
+}
 Leg::Leg(int hipChannel, int kneeChannel, int ankleChannel, bool left){
 	this->left = left;
 	initPWM(0x40);
