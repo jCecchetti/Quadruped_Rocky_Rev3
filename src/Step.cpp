@@ -14,16 +14,16 @@ Step::Step() {
 bool Step::updateStep(){
 	if(!startedStepping) stepTimer.reset();//timer doesn't start until updateStep() is first called
 	startedStepping = true;
-	if(stepTimer.get() < .15){
+	if(stepTimer.getSeconds() < .15){
 		g_globalFeetPos.position[leg].z = stepHeight;
 		//System.out.println("lifting");
 	}
-	else if(stepTimer.get() < .4){
+	else if(stepTimer.getSeconds() < .4){
 		g_globalFeetPos.position[leg].x = g_lastGlobalStepCenter.position[leg].x + g_stepLengthX;
 		g_globalFeetPos.position[leg].y = g_lastGlobalStepCenter.position[leg].y + g_stepLengthY;
 		g_globalFeetPos.position[leg].z = stepHeight;
 	}
-	else if(stepTimer.get() < .5){
+	else if(stepTimer.getSeconds() < .5){
 		g_globalFeetPos.position[leg].x = g_lastGlobalStepCenter.position[leg].x + g_stepLengthX;
 		g_globalFeetPos.position[leg].y = g_lastGlobalStepCenter.position[leg].y + g_stepLengthY;
 		g_globalFeetPos.position[leg].z = 0;
@@ -38,12 +38,12 @@ bool Step::updateStep(){
 bool Step::updateFastStep(){
 	if(!startedStepping) stepTimer.reset();//timer doesn't start until updateStep() is first called
 	startedStepping = true;
-	if(stepTimer.get() < .15){
+	if(stepTimer.getSeconds() < .15){
 		g_globalFeetPos.position[leg].x = g_lastGlobalStepCenter.position[leg].x + g_stepLengthX;
 		g_globalFeetPos.position[leg].y = g_lastGlobalStepCenter.position[leg].y + g_stepLengthY;
 		g_globalFeetPos.position[leg].z = stepHeight/2.0;
 	}
-	else if(stepTimer.get() < .4){
+	else if(stepTimer.getSeconds() < .4){
 		g_globalFeetPos.position[leg].x = g_lastGlobalStepCenter.position[leg].x + g_stepLengthX;
 		g_globalFeetPos.position[leg].y = g_lastGlobalStepCenter.position[leg].y + g_stepLengthY;
 		g_globalFeetPos.position[leg].z = 0;

@@ -4,6 +4,9 @@
 #include "PositionCluster.h"
 #include <iostream>
 #include "RobotMotion.h"
+#include <chrono>
+#include <ctime>
+#include "Timer.h"
 
 Position g_globalRobotPos(0.0,0.0,6.5,0.0,0.0,0.0);
 Position g_localRobotPos(0.0,0.0,0.0,0.0,0.0,0.0);
@@ -27,7 +30,6 @@ double g_stepLengthX = 0;
 double g_stepLengthY = 0;
 
 
-
 int main(int argc, char *argv[])
 {
 	Leg frontLeftLeg;
@@ -36,42 +38,39 @@ int main(int argc, char *argv[])
 	Leg rearRightLeg;
 
 	RobotMotion motion(frontLeftLeg, frontRightLeg, rearLeftLeg, rearRightLeg);
-	motion.update();
 	std::cout << "YAY" << std::endl;
 
-	//time timer = time();
-	/*double fps = 60;// updates per second
-	double timePerTick = 1000000000/fps;
+	Timer loopTimer;
+	double fps = 60.0;// updates per second
+	double timePerTick = 1000/fps;
 	double delta = 0;
-	long now;
-	long lastTime = 0;//nanotime
-	long timer = 0;
+	double now = loopTimer.getMillis();
+	double lastTime = now;
+	double timer = 0;
 	int ticks = 0;
 	long totalSeconds = 0;
-	bool running = true;*/
+	//bool running = true;
 
-	/*
-	while(running){
-		now = std::chrono::system_clock::now();
-		delta += (now - lastTime) / timePerTick;
+	while(totalSeconds < 5){
+		now = loopTimer.getMillis();
+		delta += (now - lastTime)/timePerTick;
 		timer += now - lastTime;
 		lastTime = now;
-		//cout << now;
 
 		if(delta >= 1){
-			//update();
+			motion.update();
 			ticks++;
 			delta--;
 			//if(motion.end) running = false;
 		}
 
-		if(timer >= 1000000000){
-			//System.out.println("Ticks and Frames " + ticks);
+		if(timer >= 1000){
+			std::cout << "Updates per Second " <<  ticks << std::endl;
 			timer = 0;
 			ticks = 0;
 			totalSeconds++;
 		}
-	}*/
+	}
 
 	return 0;
 }

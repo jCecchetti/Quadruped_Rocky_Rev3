@@ -9,18 +9,30 @@
 #define TIMER_H_
 
 #include <ctime>
+#include <chrono>
 
-class Timer {
+class Timer{
 public:
-	explicit Timer(bool start_immediately = false);
-	void Start(bool reset = false);
-	void Stop();
-	void reset();
-	unsigned long get() const;
-	virtual ~Timer();
+    Timer() :
+            m_beg(clock_::now()) {
+    }
+    void reset() {
+        m_beg = clock_::now();
+    }
+
+    double getMillis() const {
+        return std::chrono::duration_cast<std::chrono::milliseconds>(
+                clock_::now() - m_beg).count();
+    }
+    double getSeconds() const {
+    	return std::chrono::duration_cast<std::chrono::seconds>(
+    	                clock_::now() - m_beg).count();
+    }
+
 private:
-	std::clock_t start, stop;
-	bool running;
+    typedef std::chrono::steady_clock clock_;
+    typedef std::chrono::duration<double, std::ratio<1> > second_;
+    std::chrono::time_point<clock_> m_beg;
 };
 
 #endif /* TIMER_H_ */
