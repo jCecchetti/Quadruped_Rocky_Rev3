@@ -52,3 +52,8 @@ void resetAllPWM(int on, int off)
     wiringPiI2CWriteReg8(pwmHatFD, __ALL_LED_OFF_L, off & 0xFF);
     wiringPiI2CWriteReg8(pwmHatFD, __ALL_LED_OFF_H, off >> 8);
 }
+
+void setAngle(int channel, double angle){
+	int highTime = floor((angle/180.0)*4096.0);
+	setPWM(channel, highTime, 4096-highTime);
+}
