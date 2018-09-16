@@ -33,10 +33,10 @@ double g_stepLengthY = 0;
 
 int main(int argc, char *argv[])
 {
-	Leg frontLeftLeg;
-	Leg frontRightLeg;
-	Leg rearLeftLeg;
-	Leg rearRightLeg;
+	Leg frontLeftLeg(12, 13, 14, true);
+	Leg frontRightLeg(8, 9, 10, false);
+	Leg rearLeftLeg(4, 5, 6, true);
+	Leg rearRightLeg(0, 1, 2, false);
 
 	RobotMotion motion(frontLeftLeg, frontRightLeg, rearLeftLeg, rearRightLeg);
 	//std::cout << "YAY" << std::endl;
