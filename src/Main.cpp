@@ -34,12 +34,18 @@ double g_stepLengthY = 0;
 int main(int argc, char *argv[])
 {
 	initPWM(0x40);
-	setAngle(0,90);
+	setPWM(0,1024, 3072);
+	setPWM(1,1024, 3072);
+	setPWM(2,1024, 3072);
+	setPWM(4,1024, 3072);
+	setPWM(5,1024, 3072);
+	setPWM(6,1024, 3072);
+	/*setAngle(0,90);
 	setAngle(1,90);
 	setAngle(2,90);
 	setAngle(4,90);
 	setAngle(5,90);
-	setAngle(6,90);
+	setAngle(6,90);*/
 
 	Leg frontLeftLeg;
 	Leg frontRightLeg;
@@ -47,7 +53,7 @@ int main(int argc, char *argv[])
 	Leg rearRightLeg;
 
 	RobotMotion motion(frontLeftLeg, frontRightLeg, rearLeftLeg, rearRightLeg);
-	std::cout << "YAY" << std::endl;
+	//std::cout << "YAY" << std::endl;
 
 	Timer loopTimer;
 	double fps = 60.0;// updates per second
