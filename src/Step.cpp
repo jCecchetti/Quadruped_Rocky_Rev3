@@ -7,6 +7,7 @@
 
 #include "Step.h"
 #include <math.h>
+#include <stdlib.h>
 
 Step::Step() {
 
@@ -140,9 +141,9 @@ bool Step::balanceCoM(int steppingLeg){
 }
 
 bool Step::homeCoM(){
-	if(abs(g_localRobotPos.y) > .1) g_localRobotPos.y -= signum(g_localRobotPos.y)*shiftSpeed/updateRate;
+	if(std::abs(g_localRobotPos.y) > .1) g_localRobotPos.y -= signum(g_localRobotPos.y)*shiftSpeed/updateRate;
 	else g_localRobotPos.y = 0;
-	if(abs(g_localRobotPos.y) > .1) g_localRobotPos.x -= signum(g_localRobotPos.x)*shiftSpeed/updateRate;
+	if(std::abs(g_localRobotPos.y) > .1) g_localRobotPos.x -= signum(g_localRobotPos.x)*shiftSpeed/updateRate;
 	else g_localRobotPos.x = 0;
 	if(g_localRobotPos.y == 0 && g_localRobotPos.x == 0) return true;
 	else return false;
