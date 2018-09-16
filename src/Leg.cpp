@@ -25,6 +25,7 @@ Leg::Leg(int hipChannel, int kneeChannel, int ankleChannel, bool left){
 
 bool Leg::setFootPos(Position pos){
 		calculateAngles(pos.x, pos.y, pos.z);
+		std::cout << pos.x << " " << pos.y << " " << pos.z << std::endl;
 		setAngle(hipChannel, hipAngle-95);
 		setAngle(kneeChannel, kneeAngle-95);
 		setAngle(ankleChannel, ankleAngle-95);
