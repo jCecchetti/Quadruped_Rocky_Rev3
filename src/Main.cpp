@@ -8,6 +8,7 @@
 #include <ctime>
 #include "Timer.h"
 #include "PWM.h"
+#include "Joystick.h"
 
 Position g_globalRobotPos(0.0,0.0,6.5,0.0,0.0,0.0);
 Position g_localRobotPos(0.0,0.0,0.0,0.0,0.0,0.0);
@@ -33,6 +34,7 @@ double g_stepLengthY = 0;
 
 int main(int argc, char *argv[])
 {
+	Joystick j;
 	initPWM(0x40);
 	Leg frontLeftLeg(12, 13, 14, true);
 	Leg frontRightLeg(8, 9, 10, false);
@@ -61,6 +63,7 @@ int main(int argc, char *argv[])
 
 		if(delta >= 1){
 			motion.update();
+			j.update();
 			ticks++;
 			delta--;
 			//if(motion.end) running = false;
