@@ -17,7 +17,6 @@ Leg::Leg(){
 }
 Leg::Leg(int hipChannel, int kneeChannel, int ankleChannel, bool left){
 	this->left = left;
-	initPWM(0x40);
 	this->hipChannel = hipChannel;
 	this->kneeChannel = kneeChannel;
 	this->ankleChannel = ankleChannel;
@@ -26,9 +25,9 @@ Leg::Leg(int hipChannel, int kneeChannel, int ankleChannel, bool left){
 bool Leg::setFootPos(Position pos){
 		calculateAngles(pos.x, pos.y, pos.z);
 		std::cout << pos.x << " " << pos.y << " " << pos.z << std::endl;
-		//setAngle(hipChannel, hipAngle-95);
-		//setAngle(kneeChannel, kneeAngle-95);
-		//setAngle(ankleChannel, ankleAngle-95);
+		setAngle(hipChannel, hipAngle-95);
+		setAngle(kneeChannel, kneeAngle-95);
+		setAngle(ankleChannel, ankleAngle-95);
 
 		return true;
 }
@@ -60,7 +59,7 @@ bool Leg::calculateAngles(double x, double y, double z){
 
 	std::cout << hipAngle << std::endl;
 	std::cout << kneeAngle << std::endl;
-	std::cout << ankleAngle<< "\n" << std::endl;
+	std::cout << ankleAngle << "\n" << std::endl;
 
 	return true;
 }

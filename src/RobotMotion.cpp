@@ -46,8 +46,8 @@ void RobotMotion::update(){
 
 	if(false) currentState = stopped;
 	else if(false) currentState = trotting;
-	else if(true) currentState = walking;
-	else if(true) end = true;
+	else if(false) currentState = walking;
+	else if(false) end = true;
 	else if(true) currentState = standing;
 	setWantedState(currentState);
 }
@@ -131,6 +131,12 @@ bool RobotMotion::home(){
 }
 
 void RobotMotion::handleStanding(){
+	updateGlobalRobotPos();
+	g_globalCornerPos = Body::getGlobalCornerPos(g_localRobotPos, g_globalRobotPos);
+	frontLeftLeg.setFootPos(Body::getRelativeFootPos(g_globalCornerPos.position[0], g_globalFeetPos.position[0]));
+	frontRightLeg.setFootPos(Body::getRelativeFootPos(g_globalCornerPos.position[1], g_globalFeetPos.position[1]));
+	hindLeftLeg.setFootPos(Body::getRelativeFootPos(g_globalCornerPos.position[2], g_globalFeetPos.position[2]));
+	hindRightLeg.setFootPos(Body::getRelativeFootPos(g_globalCornerPos.position[3], g_globalFeetPos.position[3]));
 
 }
 
