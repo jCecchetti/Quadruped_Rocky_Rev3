@@ -7,7 +7,7 @@
 #include <chrono>
 #include <ctime>
 #include "Timer.h"
-
+#include "PWM.h"
 
 Position g_globalRobotPos(0.0,0.0,6.5,0.0,0.0,0.0);
 Position g_localRobotPos(0.0,0.0,0.0,0.0,0.0,0.0);
@@ -33,7 +33,9 @@ double g_stepLengthY = 0;
 
 int main(int argc, char *argv[])
 {
-	Leg frontLeftLeg(12, 13, 14, true);
+	initPWM(0x40);
+	setPWM(3, 0, 1500);
+/*	Leg frontLeftLeg(12, 13, 14, true);
 	Leg frontRightLeg(8, 9, 10, false);
 	Leg rearLeftLeg(4, 5, 6, true);
 	Leg rearRightLeg(0, 1, 2, false);
@@ -71,7 +73,7 @@ int main(int argc, char *argv[])
 			ticks = 0;
 			totalSeconds++;
 		}
-	}
+	}*/
 
 	return 0;
 }
