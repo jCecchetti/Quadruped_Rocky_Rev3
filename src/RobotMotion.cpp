@@ -46,7 +46,7 @@ void RobotMotion::update(){
 
 	if(false) currentState = stopped;
 	else if(false) currentState = trotting;
-	else if(false) currentState = walking;
+	else if(true) currentState = walking;
 	else if(false) end = true;
 	else if(true) currentState = standing;
 	setWantedState(currentState);
