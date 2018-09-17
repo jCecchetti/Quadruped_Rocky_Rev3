@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 Step::Step() {
-
+	stepTimer.reset();
 }
 
 bool Step::updateStep(){
@@ -167,6 +167,7 @@ double Step::distance(Position CoMPos, Position globalFeetPos){
 
 void Step::newStep(int legnum){
 	leg = legnum;
+	stepTimer.reset();
 }
 
 double Step::signum(double a){
