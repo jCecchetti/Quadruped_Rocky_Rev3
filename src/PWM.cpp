@@ -17,7 +17,7 @@ void initPWM(int address)
     mode1 = mode1 & ~__SLEEP;
     wiringPiI2CWriteReg8(pwmHatFD, __MODE1, mode1);
 
-    setPWMFreq(500);
+    setPWMFreq(60);
 }
 
 void setPWMFreq(int freq)
