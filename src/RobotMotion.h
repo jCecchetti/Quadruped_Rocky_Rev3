@@ -59,6 +59,7 @@ private:
 	double currentRobotSpeedX = 0;
 	double currentRobotSpeedY = 0;
 	double turningSpeed = 7.0;// degrees/s
+	double pivotSpeed = 25.0;
 	double updateRate = Constants::UPDATESPERSECOND;
 	Leg frontLeftLeg, frontRightLeg, hindLeftLeg, hindRightLeg;
 	double deadBand = .05;

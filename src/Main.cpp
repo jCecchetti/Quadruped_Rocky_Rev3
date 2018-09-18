@@ -41,14 +41,15 @@ PositionCluster g_lastGlobalStepCenter(Position(Constants::BODYLENGTH/2, Constan
 		Position(-Constants::BODYLENGTH/2, -Constants::BODYWIDTH/2, 0,0,0,0));
 double g_stepLengthX = 0;
 double g_stepLengthY = 0;
+vector<char> joy_button;
+vector<int> joy_axis;
 
 
 int main(int argc, char *argv[])
 {
 	int joy_fd(-1), num_of_axis(0), num_of_buttons(0);
 	char name_of_joystick[80];
-	vector<char> joy_button;
-	vector<int> joy_axis;
+
 
 	if((joy_fd=open(JOY_DEV,O_RDONLY)) < 0)
 	{
@@ -124,9 +125,9 @@ int main(int argc, char *argv[])
 			break;
 		}
 
-		cout<<"axis/10000: ";
+		cout<<"axis: ";
 		for(size_t i(0);i<joy_axis.size();++i)
-			cout<<" "<<setw(2)<<joy_axis[i]/10000;
+			cout<<" "<<setw(2)<<joy_axis[i];
 		cout<<endl;
 
 		cout<<"  button: ";
