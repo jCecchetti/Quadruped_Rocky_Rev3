@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 
 	RobotMotion motion(frontLeftLeg, frontRightLeg, rearLeftLeg, rearRightLeg);
 
-	while(totalSeconds < 5){
+	while(totalSeconds < 20){
 		now = loopTimer.getMillis();
 		delta += (now - lastTime)/timePerTick;
 		timer += now - lastTime;
