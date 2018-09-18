@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <vector>
 #include "Leg.h"
 #include "PositionCluster.h"
 #include <iostream>
@@ -10,7 +11,6 @@
 #include "PWM.h"
 
 #include <iomanip>
-#include <vector>
 #include <cstdio>
 #include <fcntl.h>
 #include <unistd.h>

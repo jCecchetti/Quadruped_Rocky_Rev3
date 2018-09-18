@@ -17,7 +17,6 @@
 #include <vector>
 
 class Leg;
-//class Step;
 
 extern Position g_globalRobotPos;
 extern Position g_localRobotPos;
