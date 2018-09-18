@@ -14,6 +14,7 @@
 #include "Leg.h"
 #include "Constants.h"
 #include "Step.h"
+#include <vector>
 
 class Leg;
 //class Step;
@@ -26,6 +27,7 @@ extern PositionCluster g_globalStepCenter;
 extern PositionCluster g_lastGlobalStepCenter;
 extern double g_stepLengthX;
 extern double g_stepLengthY;
+extern vector<int> joy_axis;
 
 class RobotMotion {
 public:
