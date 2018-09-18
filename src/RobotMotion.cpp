@@ -19,8 +19,8 @@ RobotMotion::RobotMotion(Leg frontLeftLeg, Leg frontRightLeg, Leg hindLeftLeg, L
 
 void RobotMotion::updateGlobalRobotPos(){
 	if(currentState == standing){
-		g_localRobotPos.x += (double)joy_axis[4]/32767.0*2.5/updateRate;
-		g_localRobotPos.y += (double)joy_axis[3]/32767.0*1.5/updateRate;
+		g_localRobotPos.x += -(double)joy_axis[4]/32767.0*2.5/updateRate;
+		g_localRobotPos.y += -(double)joy_axis[3]/32767.0*1.5/updateRate;
 		//g_localRobotPos.z -= 1.5/updateRate;
 		//g_localRobotPos.yaw = joy_axis[0]*pivotSpeed/updateRate;
 		g_localRobotPos.roll = -20.0*(double)joy_axis[0]/32767.0*pivotSpeed/updateRate;
