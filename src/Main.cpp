@@ -21,7 +21,7 @@
 
 using namespace std;
 
-Position g_globalRobotPos(0.0,0.0,5.5,0.0,0.0,0.0);
+Position g_globalRobotPos(0.0,0.0,6.5,0.0,0.0,0.0);
 Position g_localRobotPos(0.0,0.0,0.0,0.0,0.0,0.0);
 PositionCluster g_globalFeetPos(Position(Constants::BODYLENGTH/2, Constants::BODYWIDTH/2, 0,0,0,0),
 		Position(Constants::BODYLENGTH/2, -Constants::BODYWIDTH/2, 0,0,0,0),
